@@ -19,9 +19,9 @@ function checkRanking() {
   // **********【問題２】ランキングを表示しよう！**********
   // 保存先クラスを作成
   var highScore = ncmb.DataStore("GameScore");
-  // scoreの降順でデータ5件を取得するように設定する
+  // scoreの降順でデータ10件を取得するように設定する
   highScore.order("score", true)
-    .limit(5).fetchAll()
+    .limit(10).fetchAll()
     .then(function (results) {
       // 検索に成功した場合の処理
       console.log("検索に成功しました。");
