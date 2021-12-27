@@ -23,7 +23,8 @@
   <script src="js/tapGame.js"></script>
   <script src="js/ranking.js"></script>
   <script src="js/Max.js"></script>
- 
+  <script src="js/Min.js"></script>
+
 </head>
 
 <body>
@@ -135,6 +136,26 @@
             <td align="right" nowrap>Max</td>
             <td id="name_Max" align="center" width="200">no data</td>
             <td id="score_Max" align="center" width="150">-</td>
+          </tr>
+        </table>
+
+      </center>
+    </div>
+  </div>
+      <!-- 最低スコア画面 -->
+  <div data-role="page" id="Min-page">
+    <div data-role="header" data-position="fixed" data-theme="c">
+      <h1></h1>
+      <a href="#list-page" data-icon="back" class="ui-btn-left">戻る</a>
+    </div>
+    <div data-role="content">
+      <center>
+        <h1>Min</h1><br />
+        <table id="MinTable" border="1" width="90%" cellspacing="1" cellpadding="5">
+          <tr>
+            <td align="right" nowrap>Min</td>
+            <td id="name_Min" align="center" width="200">no data</td>
+            <td id="score_Min" align="center" width="150">-</td>
           </tr>
         </table>
 

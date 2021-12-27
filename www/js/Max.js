@@ -6,11 +6,11 @@
 //  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
 //
 
-// 「最高スコアと最低スコアを見る」ボタン押下時の処理
+// 「最高スコア見る」ボタン押下時の処理
 function toMax() {
   // データ取得
   checkMax();
-  // 最高スコアと最低スコア画面へ遷移
+  // 最高スコア画面へ遷移
   window.location.href = "#Max-page";
 }
 
