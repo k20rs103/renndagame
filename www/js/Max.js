@@ -7,60 +7,43 @@
 //
 
 // 「最高スコアと最低スコアを見る」ボタン押下時の処理
-function toMaxMin() {
+function toMax() {
   // データ取得
-  checkMaxMin();
-  // ランキング画面へ遷移
-  window.location.href = "#MaxMin-page";
+  checkMax();
+  // 最高スコアと最低スコア画面へ遷移
+  window.location.href = "#Max-page";
 }
 
 // 【mBaaS】保存したデータの検索と取得
-function checkMaxMin() {
-  // **********【問題２】ランキングを表示しよう！**********
+function checkMax() {
   // 保存先クラスを作成
-  var highScore = ncmb.DataStore("GameScore");
-  // scoreの降順でデータ10件を取得するように設定する
-  highScore.order("score", true)
-    .limit(10).fetchAll()
+  var Max = ncmb.DataStore("GameScore");
+  // scoreの降順でデータ1件を取得するように設定する
+  Max.order("score", true)
+    .limit(1).fetchAll()
     .then(function (results) {
       // 検索に成功した場合の処理
       console.log("検索に成功しました。");
       // テーブルにデータをセット
-      setData(results);
+      setDataMax(results);
     })
     .catch(function (error) {
       // 検索に失敗した場合の処理
       console.log("検索に失敗しました。エラー:" + error);
     });
 
-
-
-
-
-
-
-
-
-
   // ******************************************************
 }
 
 // テーブルにデータを設定
-function setData(array) {
-  var table = document.getElementById("MaxMinTable");
-  for (i = 0; i < array.length; i++) {
+function setDataMax(arrayMax) {
+  var tableMax = document.getElementById("MaxTable");
+  for (i = 0; i < arrayMax.length; i++) {
     // 名前の設定
-    var name = table.rows[i].cells[1];
-    name.innerHTML = array[i].name + "さん";
+    var name = tableMax.rows[i].cells[1];
+    name.innerHTML = arrayMax[i].name + "さん";
     // スコアの設定
-    var score = table.rows[i].cells[2];
-    score.innerHTML = array[i].score + "連打";
+    var score = tableMax.rows[i].cells[2];
+    score.innerHTML = arrayMax[i].score + "連打";
   }
 }
-
-
-
-
-
-
-
